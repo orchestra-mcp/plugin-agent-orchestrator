@@ -577,7 +577,7 @@ func CompareProvidersSchema() *structpb.Struct {
 // a side-by-side comparison.
 func CompareProviders(deps *ToolDeps) ToolHandler {
 	return func(ctx context.Context, req *pluginv1.ToolRequest) (*pluginv1.ToolResponse, error) {
-		if err := helpers.ValidateRequired(req.Arguments, "prompt", "providers"); err != nil {
+		if err := helpers.ValidateRequired(req.Arguments, "prompt"); err != nil {
 			return helpers.ErrorResult("validation_error", err.Error()), nil
 		}
 
